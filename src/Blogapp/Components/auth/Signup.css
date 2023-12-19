@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.containers{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../../assets/blogBackground.webp);
+    background-repeat:initial;
+    background-size: cover;
+}
+.containers .boxes{
+    width: 440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: azure;
+    box-shadow: 4px 4px 2px white;
+    padding: 20px 20px;
+    gap : 5px;
+}
+.containers .boxes h1{
+    text-align: center;
+} 
+.containers .boxes form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.containers .boxes form label{
+    font-size: 0.9rem;
+    font-weight: bolder;
+}
+.containers .boxes form .formField{
+    width: 100%;
+    height : 30px;
+    padding: 10px 10px;
+    border-radius: 8px;
+}
+#submitButton{
+    width: 80px;
+    margin: auto;
+    margin-top: 5px;
+    padding: 10px 10px;
+    background-color: tomato;
+    border: 1px solid tomato;
+    font-family: bolder;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.containers .boxes  p{
+    text-align: center;
+}

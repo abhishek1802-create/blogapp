@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.blogs{
+    width: 80%;
+    margin: auto;
+    /* height: 100vh; */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.blogs .headerLinks{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+#addPost{
+    padding: 6px 10px;
+    color: white;
+    font-weight: bolder;
+    background-color: tomato;
+    border: 1px solid tomato;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.blogs .blogMain{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.blogs .blogMain .blogCard{
+    width: 250px;
+    height : 410px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: azure;
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px gray, -2px 2px 3px gray;
+    
+}
+.blogs .blogMain .blogCard h1{
+    color: black;
+}
+.blogs .blogMain .blogCard  p{
+    color :navy;
+    font-weight: bold;
+}
+#blogPic{
+    width: 100%;
+    height: 260px;
+}
+
+@media   (max-width : 600px) {
+    
+    .blogs .blogMain{
+        width: 100%;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+}

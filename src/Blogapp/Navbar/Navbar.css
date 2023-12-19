@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Navbar{
+    width: 100%;
+    height: 60px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 2px lightcoral;
+    overflow: hidden;
+}
+.Navbar .logo{
+    margin-left: 40px;
+}
+#logoImage{
+    width : 120px;
+}
+.Navbar .navList{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 40px;
+}
+#authButton{
+    padding: 10px 20px;
+    background-color: tomato;
+    border: 1px solid tomato;
+    font-weight: bolder;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+#userPic{
+    width: 40px;
+    height: 40px;
+    cursor : pointer;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+#Pic{
+    width: 40px;
+    height: 40px;
+    cursor : pointer;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.menu{
+    display: none;
+}
+
+#menubox{
+    display: none;
+}
+
+@media (max-width:566px){
+    #menubox{
+        display: block;
+        background-color: black;
+    }
+    .menu{
+        display: block;
+    }
+    #userPic,#authButton {
+        display: none;
+    }
+   
+    #Menu_authButton{
+        padding: 10px 20px;
+        color: white;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+}
