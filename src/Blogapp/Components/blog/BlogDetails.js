@@ -26,7 +26,7 @@ function BlogDetails() {
     <Navbar/>
     <div className='blogDetail'>
           <div className="blogCard">
-            <img src={`http://localhost:7000${blog_Details.blogPic}`} alt="" id='blogPicture' />
+            <img src={`${process.env.REACT_APP_BACKENDURL}${blog_Details.blogPic}`} alt="" id='blogPicture' />
             <h1>{blog_Details.title}</h1>
             <h5>{blog_Details.description}</h5>
             <Link to= {`/comment/${id}`} style={{textDecoration:'none',}}>🗨️</Link>
@@ -38,7 +38,7 @@ function BlogDetails() {
                 const imageUrl = profilePic.split('\\uploads\\')[1];
                 return(
                   <div className="commentCard">
-                  <img src={`http://localhost:7000/uploads/${imageUrl}`} 
+                  <img src={`${process.env.REACT_APP_BACKENDURL}/uploads/${imageUrl}`} 
                   alt='userImage'></img>
                   <p>{comment.comment}</p>
                   <h4>{comment.userId.userName}</h4>
