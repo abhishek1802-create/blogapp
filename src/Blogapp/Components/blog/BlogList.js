@@ -35,7 +35,7 @@ function BlogList() {
         return(
           <Link to= {`/blogDetails/${_id}`}>
           <div className="blogCard">
-          <img src={`http://localhost:7000${blogPic}`} alt="blogPic" id='blogPic' />
+          <img src={`${process.env.REACT_APP_BACKENDURL}${blogPic}`} alt="blogPic" id='blogPic' />
           <h2><FaBuilding />{title}</h2>
           <p><IoTimeSharp />{createdAt.slice(0,10)}</p>
           <p>{description}</p>
