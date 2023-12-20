@@ -13,7 +13,7 @@ export const createComment = createAsyncThunk(
   async (body, thunkAPI) => {
     console.log(body);
     const response = await axios.post(
-      `http://localhost:7000/comment/add/${body.blogId}`,
+      `${process.env.REACT_APP_BACKENDURL}/comment/add/${body.blogId}`,
       {...body},
     );
     console.log("response", response);

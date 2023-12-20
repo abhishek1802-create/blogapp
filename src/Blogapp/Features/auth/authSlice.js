@@ -19,7 +19,7 @@ export const signUpUser = createAsyncThunk(
         console.log(data);
 
        const response = await axios.post(
-        "http://localhost:7000/user/signup",
+        `${process.env.REACT_APP_BACKENDURL}/user/signup`,
         data,
         {
             headers : {
@@ -35,7 +35,7 @@ export const signUpUser = createAsyncThunk(
 export const signInUser = createAsyncThunk(
     "user/signInUser",
     async (body, thunkAPI) => {
-      const reResult = await fetch("http://localhost:7000/user/login", {
+      const reResult = await fetch(`${process.env.REACT_APP_BACKENDURL}/user/login`, {
         method: "post",
         headers: {
           Accept: "application/json",

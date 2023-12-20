@@ -4,6 +4,8 @@ import Navbar from '../../Navbar/Navbar'
 import {Link} from 'react-router-dom'
 import { useEffect } from 'react'
 import { listBlog } from '../../Features/blogs/blogSlice'
+import { FaBuilding } from "react-icons/fa";
+import { IoTimeSharp } from "react-icons/io5";
 import {useDispatch ,useSelector} from 'react-redux'
 
 function BlogList() {
@@ -34,8 +36,8 @@ function BlogList() {
           <Link to= {`/blogDetails/${_id}`}>
           <div className="blogCard">
           <img src={`http://localhost:7000${blogPic}`} alt="blogPic" id='blogPic' />
-          <h1>{title}</h1>
-          <p>{createdAt.slice(0,10)}</p>
+          <h2><FaBuilding />{title}</h2>
+          <p><IoTimeSharp />{createdAt.slice(0,10)}</p>
           <p>{description}</p>
           </div>
           </Link>

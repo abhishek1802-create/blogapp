@@ -19,7 +19,7 @@ let initialState = {
 export const createBlog = createAsyncThunk(
     'blog/create',
      async (body,thunkAPI) =>{
-           const response = await axios.post("http://localhost:7000/blog/create",body,{
+           const response = await axios.post(`${process.env.REACT_APP_BACKENDURL}/blog/create`,body,{
             headers : {
                 "Content-Type" : "multipart/form-data",
             },
@@ -33,7 +33,7 @@ export const createBlog = createAsyncThunk(
 export const listBlog = createAsyncThunk(
     'blog/list',
     async (thunkAPI) => {
-         const response = await fetch("http://localhost:7000/blog/blogs",{
+         const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/blog/blogs`,{
          method : 'get',
          headers : {
             "Content-Type" : "multipart/form-data",
@@ -56,7 +56,7 @@ export const blogDetails = createAsyncThunk(
     'blog/detail',
     async (id,thunkAPI) =>{
         console.log("Id is: ",id);
-        const response = await fetch(`http://localhost:7000/blog/details/${id}`,{
+        const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/blog/details/${id}`,{
         method : 'get',
         headers :{
             "Content-Type" : "multipart/form-data",

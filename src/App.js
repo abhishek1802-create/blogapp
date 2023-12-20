@@ -9,6 +9,7 @@ import Comment from './Blogapp/Components/comments/Comment';
 
 
 function App() {
+  console.log(process.env.REACT_APP_BACKENDURL)
   return (
     <div className="App">
       <BrowserRouter>
