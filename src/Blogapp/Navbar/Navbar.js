@@ -14,6 +14,7 @@ let [menudata,setmenudata]=useState(false)
   const {profilePic} = user;
   let imageurl = profilePic.split('\\uploads\\')[1]
   console.log(imageurl)
+  console.log(`${process.env.REACT_APP_BACKENDURL}/uploads/${imageurl}`)
 
   function handleLogOut(){
      localStorage.clear();
