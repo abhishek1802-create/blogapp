@@ -9,16 +9,16 @@ import { IoTimeSharp } from "react-icons/io5";
 import {useDispatch ,useSelector} from 'react-redux'
 
 function BlogList() {
-
+  
   const dispatch = useDispatch();
   const blogData = useSelector((state)=>state.blog);
-  //console.log(blogData);
-  const {blog_Data} = blogData;
-  //console.log(blog_Data);
 
+  const {blog_Data} = blogData;
+  
   useEffect(()=>{
     dispatch(listBlog());
   },[])
+  
 
   return (
     <>
@@ -32,10 +32,11 @@ function BlogList() {
     {
       blog_Data && blog_Data.map(({_id,title,description ,blogPic,createdAt})=>{
         console.log('blogPic :',blogPic)
+          console.log(`${process.env.REACT_APP_BACKENDURL}${blogPic}`)
         return(
           <Link to= {`/blogDetails/${_id}`}>
           <div className="blogCard">
-          <img src={`http://localhost:7000${blogPic}`} alt="blogPic" id='blogPic' />
+          <img src={`${process.env.REACT_APP_BACKENDURL}${blogPic}`} alt="blogPic" id='blogPic' />
           <h2><FaBuilding />{title}</h2>
           <p><IoTimeSharp />{createdAt.slice(0,10)}</p>
           <p>{description}</p>

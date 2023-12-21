@@ -12,8 +12,11 @@ let [menudata,setmenudata]=useState(false)
   let user = JSON.parse(res);
  
   const {profilePic} = user;
+  console.log(profilePic)
+  // let imageurl = profilePic.split('\\uploads\\')[1]
   let imageurl = profilePic.split('\\uploads\\')[1]
   console.log(imageurl)
+  console.log(`${process.env.REACT_APP_BACKENDURL}/uploads/${imageurl}`)
 
   function handleLogOut(){
      localStorage.clear();
@@ -31,7 +34,7 @@ let [menudata,setmenudata]=useState(false)
             <img src={logo} alt="logo" id='logoImage' />
         </div>
         <div className="navList">
-              <img src={`http://localhost:7000/uploads/${imageurl}`} alt="userPic" id='userPic' />
+              <img src={`${process.env.REACT_APP_BACKENDURL}/uploads/${imageurl}`} alt="userPic" id='userPic' />
               <button id='authButton' onClick={handleLogOut}>Logout</button>
               <div className='menu' onClick={()=>setmenudata((prev)=>!prev)}><IoIosMenu style={{fontSize:'30px'}}/></div>
         </div>
