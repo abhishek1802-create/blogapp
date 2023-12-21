@@ -12,8 +12,9 @@ let [menudata,setmenudata]=useState(false)
   let user = JSON.parse(res);
  
   const {profilePic} = user;
-  let imageurl = profilePic.split('\uploads\')[1]
   console.log(profilePic)
+  // let imageurl = profilePic.split('\\uploads\\')[1]
+  let imageurl = profilePic.split('\\uploads\\')[1]
   console.log(imageurl)
   console.log(`${process.env.REACT_APP_BACKENDURL}/uploads/${imageurl}`)
 
