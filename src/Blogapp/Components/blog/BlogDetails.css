@@ -12,7 +12,7 @@
     padding: 20px 20px;
 }
 .blogCard{
-    width: 80%;
+    width: 60%;
     margin: auto;
     background-color: #f0f0f0;
     padding: 20px 20px;
@@ -25,22 +25,45 @@
     height: 500px;
     border-radius: 8px;
 }
+#addComment{
+    background-color: rgb(141, 244, 141);
+    cursor: pointer;
+    font-weight: bolder;
+    border: 1px solid  rgb(141, 244, 141) ;
+    padding: 4px 10px;
+    border-radius: 3px;
+}
 .comment{
-    width: 80%;
+    width: 60%;
     margin: auto;
     background-color: #f0f0f0;
     padding: 20px 20px;
     display: flex;
     flex-direction: row;
     border-radius: 8px;
-    gap: 10px;
+    gap: 20px;
 }
 .comment .commentCard{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    text-align: center;
     padding: 10px 10px;
-    width: 250px;
-    background-color: lightskyblue;
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+    color : white;
+    background-color: tomato;
+    box-shadow: 4px 4px 4px grey,-4px -4px 4px grey;
     border-radius: 8px;
+}
+.comment .commentCard p{
+    font-size: 0.8rem;
+    color: yellow;
+}
+#commentUser{
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
