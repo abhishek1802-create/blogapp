@@ -16,6 +16,7 @@ function BlogDetails() {
   const {blog_Details , comments} = blogDetail;
   const {id} = param;
   console.log('comment',comments);
+  console.log(blog_Details.blogPic);
 
   useEffect(()=>{
      dispatch(blogDetails(id));
@@ -26,11 +27,12 @@ function BlogDetails() {
     <Navbar/>
     <div className='blogDetail'>
           <div className="blogCard">
-            <img src={`${process.env.REACT_APP_BACKENDURL}/${blog_Details.blogPic}`} alt="" id='blogPicture' />
+            <img src={`${process.env.REACT_APP_BACKENDURL}${blog_Details.blogPic}`} alt="" id='blogPicture' />
             <h1>{blog_Details.title}</h1>
             <h5>{blog_Details.description}</h5>
-            <Link to= {`/comment/${id}`} style={{textDecoration:'none',}}>🗨️</Link>
+            <Link to= {`/comment/${id}`} style={{textDecoration:'none',}}><button id='addComment'>Add Comment</button></Link>
           </div>
+          <h2 style={{margin:'auto', color:'red'}}>Added Comments😊</h2>
           <div className="comment">
             {
               comments && comments.map((comment)=>{
@@ -39,10 +41,11 @@ function BlogDetails() {
                 return(
                   <div className="commentCard">
                   <img src={`http://localhost:7000/uploads/${imageUrl}`} 
-                  alt='userImage'></img>
-                  <p>{comment.comment}</p>
-                  <h4>{comment.userId.userName}</h4>
-                  <h5>{comment.createdAt.slice(0,10)}</h5>
+                  alt='userImage' id='commentUser'></img>
+                  <h4>{comment.comment}</h4>
+                  <hr />
+                  <p>{comment.userId.userName}</p>
+                  <p>{comment.createdAt.slice(0,10)}</p>
                   </div>
                 )
               })
